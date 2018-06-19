@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <head>
+        <meta http-equiv="refresh" content="180">
+        <title>Monitor Page</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href={{ url_for('static',filename = 'css/screen.css') }}>
+        <script src="static/JavaScript/app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js" integrity="sha256-vyehT44mCOPZg7SbqfOZ0HNYXjPKgBCaqxBkW3lh6bg=" crossorigin="anonymous"></script>
+    </head>
+    <script language="JavaScript">
+        <!-- Getting the current date and time and updates them every second -->
+        setInterval(function() {
+            let currentTime = new Date();
+            let currentHours = currentTime.getHours();
+            let currentMinutes = currentTime.getMinutes();
+            let currentMinutesleadingzero = currentMinutes > 9 ? currentMinutes : '0' + currentMinutes; // If the number is 9 or below we add a 0 before the number.
+            let currentDate = currentTime.getDate();
+
+            let weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            let currentDay = weekday[currentTime.getDay()];
+
+            let actualmonth = new Array(12);
+            actualmonth[0] = "January";
+            actualmonth[1] = "February";
+            actualmonth[2] = "March";
+            actualmonth[3] = "April";
+            actualmonth[4] = "May";
+            actualmonth[5] = "June";
+            actualmonth[6] = "July";
+            actualmonth[7] = "August";
+            actualmonth[8] = "September";
+            actualmonth[9] = "October";
+            actualmonth[10] = "November";
+            actualmonth[11] = "December";
+            let currentMonth = actualmonth[currentTime.getMonth()];
+            let currentTimeString = "<h1>" + currentHours + ":" + currentMinutesleadingzero + "</h1><h2>" + currentDay + " " + currentDate + " " + currentMonth + "</h2>";
+            document.getElementById("clock").innerHTML = currentTimeString;
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="upper-left">
+            <div id="clock"></div>
+            <!-- Including the date/time-script -->
+        </div>
+        <div class="upper-right">
+            <a id="place"></a>
+            <section id="location"></section>
+
+            <h2 class="smaller">Outside: </h2>
+            <div class="icon_humid">
+                <img id = "weather_image" class="invert" src="" alt="">
+                <section class="larger_font-size padding-top" id="temp"></section>
+            </div>
+           <section class="color_black" id="code"></section>
+        </div>
+        <div class="bottom">
+                <h2 class="smaller">Inside: </h2>
+                <div class="icon_humid">
+                    <img class="temp_icons" src="/static/svg/Waterdrop.svg" alt="">
+                    <p class="padding-left">
+                        {% for i in humid %}
+                            {{ i }} %
+                        {% endfor %}</p>
+                </div>
+                <div class="icon_humid">
+                    <img class = "temp_icons" src="/static/svg/Temperature.svg" alt="">
+                    <p class="padding-left">
+                        {% for i in temp %}
+                            {{ i }} °C
+                        {% endfor %}
+                    </p>
+                </div>
+        </div>
+        <div class="bottom_left">
+            <p>Local IP adress: {{ ip }}</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+
+{% extends "Base.html" %}
+{% block body %}
+<div class="o-row">
+    <div class="o-container">
+        <h1 class="margin-left-right">Welcome to your Smart Mirror!</h1>
+        <p class="margin-left-right">Now: </p>
+        <div class="info_box">
+            <div>
+                <img class="place_item_left" src="/static/svg/Temperature.svg" alt="">
+                <h2 class="place_item_center">Temperature: </h2>
+            <div id = "refresh">
+                <p class="place_item_right">
+                    {% for i in temp %}
+                        {{ i }} °C
+                    {% endfor %}
+                </p>
+            </div>
+            </div>
+        </div>
+        <div class="info_box">
+            <div>
+                <img class="place_item_left" src="/static/svg/Waterdrop.svg" alt="">
+                <h2 class="place_item_center">Humidity:</h2>
+                <p class="place_item_right">
+                    {% for i in humid %}
+                        {{ i }} %
+                    {% endfor %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="o-container">
+        <p class="padding_change margin-left-right">Minimum values: </p>
+        <div class="info_box">
+            <div>
+                <img class="place_item_left" src="/static/svg/Temperature.svg" alt="">
+                <h2 class="place_item_center">Temperature: </h2>
+                <p class="place_item_right">
+                    {% for list in min_temp %}
+                        {% for i in list %}
+                            {{ i }} °C
+                        {% endfor %}
+                    {% endfor %}</p>
+            </div>
+        </div>
+        <div class="info_box">
+            <div>
+                <img class="place_item_left" src="/static/svg/Waterdrop.svg" alt="">
+                <h2 class="place_item_center">Humidity:</h2>
+                <p class="place_item_right">
+                    {% for list in min_humid %}
+                        {% for i in list %}
+                            {{ i }} %
+                        {% endfor %}
+                    {% endfor %}
+                    </p>
+            </div>
+        </div>
+    </div>
+    <div class="o-container padding_change_bottom">
+        <p class="padding_change margin-left-right">Maximum values: </p>
+        <div class="info_box">
+            <div>
+                <img class="place_item_left" src="/static/svg/Temperature.svg" alt="">
+                <h2 class="place_item_center">Temperature: </h2>
+                <p class="place_item_right">
+                    {% for list in max_temp %}
+                        {% for i in list %}
+                            {{ i }} °C
+                        {% endfor %}
+                    {% endfor %}</p>
+            </div>
+        </div>
+        <div class="info_box">
+            <div>
+                <img class="place_item_left" src="/static/svg/Waterdrop.svg" alt="">
+                <h2 class="place_item_center">Humidity:</h2>
+                <p class="place_item_right">
+                    {% for list in max_humid %}
+                        {% for i in list %}
+                            {{ i }} %
+                        {% endfor %}
+                    {% endfor %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>The Weather</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+	<script src="/static/JavaScript/app2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js" integrity="sha256-vyehT44mCOPZg7SbqfOZ0HNYXjPKgBCaqxBkW3lh6bg=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+{% extends "Base.html" %}
+{% block body %}
+	<main>
+    <div class="o-container">
+        <div class="color-change margin-left-right">
+            <h1>Weather Call</h1>
+            <input type="text" name="place" id="place"></input>
+            <section id="response"></section>
+            <canvas class="grafiek" id="myChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+	</main>
+{% endblock %}
+</body>
+
+</html>

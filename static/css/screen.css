@@ -1,0 +1,155 @@
+/* BASIC*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #000;
+	color: white;
+	font-family: Montserrat, sans-serif;
+}
+
+/*!* LAYOUT *!*/
+	/*!* The width and height of "wrapper", "upper-left", "upper-right"*/
+	/*and "bottom" needs to be changed in order to match your monitor's resolution *!*/
+#wrapper {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.upper-left {
+	width: 325px;
+	margin: 50px 50px 0 0;
+	float: left;
+	text-align: center;
+}
+
+.upper-right {
+	width: 340px;
+	margin: 50px 50px 0 0;
+	float: right;
+	text-align: right;
+}
+
+.lower-right {
+	width: 340px;
+	margin: 150px 35px 0 0;
+	float: right;
+	text-align: right;
+
+}
+.bottom {
+	/*clear: both;*/
+	/*vertical-align: text-bottom;*/
+	margin: 150px 35px 0 0;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: right;
+
+}
+
+.bottom_left p {
+	text-align: left;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 20px;
+	padding: 20px;
+
+}
+
+/* TEXT */
+h1 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 102px;
+	font-weight: 300;
+	line-height: 102px;
+	}
+
+h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-weight: 300;
+	padding-top: 5px;
+	}
+
+h2.smaller {
+	font-size: 22px;
+	letter-spacing: 1px;
+	}
+
+h3 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 42px;
+	font-weight: 300;
+	padding: 20px 0 0 0;
+	}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 50px;
+	font-weight: 300;
+	}
+
+p.date {
+	font-size: 12px;
+	font-weight: 600;
+	}
+.kleur_wit {
+    fill: white;
+    width: 128px;
+    height: 128px;
+	background-color: white;
+}
+.invert {
+    filter: invert(100%);
+	width: 100px;
+	height: 100px;
+}
+
+.larger_font-size {
+	font-family: 'Roboto', sans-serif;
+	font-size: 45px;
+	font-weight: 100;
+}
+
+.icon_humid {
+	float: right;
+	margin: 10px;
+	display: flex;
+}
+
+.temp_icons {
+	filter: invert(100%);
+	width: 50px;
+	height: 50px;
+}
+
+.padding-top {
+	margin-top: 15px;
+	margin-left: 5px;
+}
+
+.align-bottom {
+	text-align: end;
+}
+
+.padding-left {
+	padding-left: 10px;
+}
+
+.location_align {
+	display: flex;
+	text-align: right;
+}
+
+.color_black {
+	display: none;
+}

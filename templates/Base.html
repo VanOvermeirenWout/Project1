@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href={{ url_for('static',filename = 'css/style.css') }}>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+</head>
+
+<body>
+<header class="o-row o-row--header">
+    <div class="o-container__header">
+        <div class="c-header">
+            <div class="">
+                <nav class="c-nav">
+                    <ul class="o-list c-nav__list">
+                        <li><a href="{{ url_for('start') }}">Home</a></li>
+                        <li><a href="{{ url_for('weather') }}">Weather</a></li>
+            {#           <li><a href="http://127.0.0.1:5000/calendar">Calendar</a></li>#}
+                        <li class="right"><a href="{{ url_for('about') }}">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="c-header__mobile-nav-trigger">
+                <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                    <svg class="c-nav-trigger__svg" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<div class="body-width">
+    {% block body %}
+
+    {% endblock %}
+</div>
+</body>
+
+</html>

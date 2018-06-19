@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+</head>
+<body>
+{% extends "Base.html" %}
+{% block body %}
+    <div>
+        <h1>Calendar</h1>
+        <p>You can make appointments and they will appear on the mirror.</p>
+    </div>
+    <div>
+        <ul class="c-max-width">
+            <li>Subject</li>
+            <li>Location </li>
+            <li>Starting Time</li>
+            <li>Ending Time</li>
+
+        </ul>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 43">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7b8079;
+      }
+      .cls-2 {
+        fill: #fff;
+        font-size: 25px;
+      }
+    </style>
+  </defs>
+  <g id="Reset_button" transform="translate(-26 -72)">
+    <rect id="Rectangle_45" data-name="Rectangle 45" class="cls-1" width="118" height="43" rx="21.5" transform="translate(26 72)"/>
+    <text id="Submit" class="cls-2" transform="translate(40 76)"><tspan x="3.407" y="27">Submit</tspan></text>
+  </g>
+</svg>
+
+    <table>
+        <tr>
+           {% for lijstje in titels %}
+                {% for titel in lijstje %}
+                    <th>{{ titel }}</th>
+            {% endfor %}
+        {% endfor %}
+
+        </tr>
+    {% for lijst in data %}
+        {% for i in lijst %}
+            <td>{{ i }}</td>
+            {% endfor %}
+    {% endfor %}
+    </table>
+{% endblock %}
+</body>
+</html>
